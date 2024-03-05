@@ -1,0 +1,32 @@
+Develop a PHP program to read the content of the file and print the frequency of occurrence of the 
+word accepted by the user in the file.
+
+
+html. 
+
+<html>
+ <h2>Word Frequency Checker</h2>
+ <form action="Exp8.php" method="post">
+ <label for="searchWord">Enter Word to Check Frequency:</label>
+ <input type="text" name="searchWord" required>
+ <input type="submit" name="checkFrequency" value="Check Frequency">
+ </form>
+</html>
+
+php. 
+
+<?php
+$filename = "MyFile.txt";
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["checkFrequency"])) 
+{
+ $searchWord = $_POST["searchWord"];
+ checkWordFrequency($filename, $searchWord);
+}
+function checkWordFrequency($filename, $searchWord) 
+{
+$content = file_get_contents($filename);
+ $wordCount = substr_count(strtolower($content), strtolower($searchWord));
+ echo "<h3>Frequency of '$searchWord' in the file:</h3>";
+ echo "<p>$wordCount occurrences</p>";
+}
+?>
