@@ -1,0 +1,23 @@
+aadhar. 
+
+<?php
+$text = "Aadhaar numbers are 12-digit Unique Identification (UID) numbers that 
+are randomly generated for every resident of India. Aadhar number of Resident 1 
+with house No. 436 is 265385644663, Resident 2 with house No. 1023 is 
+996048562334, Resident 3 with house No. 23 is 10012002345";
+$aadhaar = "/\d{12}/"; // Regular expression for 12-digit numbers
+$aadhaarCount = preg_match_all($aadhaar, $text);
+echo "Occurences of Aadhaar numbers: $aadhaarCount";
+?>
+
+
+
+b) occurrences of a given pattern and replace them with 
+a text.
+
+<?php
+$str = "I visited Microsoft and it was a wonderful experience. I want to revist 
+Microsoft in near future";
+$pattern = "/microsoft/i";
+echo preg_replace($pattern, "CEC", $str);
+?>
