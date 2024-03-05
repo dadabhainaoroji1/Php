@@ -1,0 +1,233 @@
+a. odd even
+
+html.  
+
+<html> 
+<body> 
+<form action="Exp3_1a_forms.php" method = "post"> 
+ENTER THE NUMBER 
+<br><br> 
+NUMBER: <input type="number" name="number"> 
+<br><br> 
+<input type = "submit" name = "submit" value="Check">
+<br><br>
+ 
+</form> 
+</body> 
+</html>
+
+php.  
+
+<?php 
+if(isset($_POST['submit'])) 
+ { 
+$number = $_POST['number'];
+function check($number)
+{ 
+if($number % 2 == 0)
+{ 
+return "Even"; 
+} 
+else
+{ 
+return "Odd"; 
+} 
+}
+echo "The number $number is " . check($number);
+}
+?>
+
+
+
+
+b.  
+
+divisible by given N. 
+
+<?php 
+function Divisibility($Numerator, $Denominator)
+ {
+ $div = $Numerator / $Denominator;
+ $mod = $Numerator % $Denominator;
+ 
+ if ($mod == 0)
+ {
+ echo $Numerator . ' is exactly divisible by ' . $Denominator . ' - ' . 
+$div . ' times <br />';
+ }
+ else
+ {
+ echo $Numerator . ' is not exactly divisible by ' . $Denominator . '<br />';
+ }
+ }
+ Divisibility (12, 5);
+Divisibility (15, 5);
+?>
+
+
+c.  
+square of another num. 
+
+<?php
+function checkSquare($number)
+{
+ // Calculate square root
+ $sqrt = sqrt($number);
+ if (floor($sqrt) == $sqrt) {
+ echo "$number is a perfect square.\n";
+ echo "Square root: $sqrt\n";
+ } else {
+ echo "$number is not a perfect square.\n";
+ }
+}
+$givenNumber = 25; // Change this to the number you want to test
+checkSquare($givenNumber);
+?>
+
+d.  
+square of another num (html) . 
+
+html. 
+
+<html> 
+<body> 
+<form action="Exp3_1c_forms.php" method = "post"> 
+ENTER THE NUMBER
+<br><br> 
+NUMBER: <input type="number" name="number"> 
+<br><br> 
+<input type = "submit" name = "submit" value="Check">
+<br><br>
+ 
+</form> 
+</body> 
+</html>
+
+
+
+php.  
+
+<?php 
+if(isset($_POST['submit'])) 
+ { 
+$number = $_POST['number'];
+function checkSquare($number)
+{ 
+$sqrt = sqrt($number);
+if(floor($sqrt) == $sqrt)
+{ 
+return "$number is a perfect square.\n"; 
+} 
+else
+{ 
+return "$number is not a perfect square."; 
+} 
+}
+echo "The number ". checkSquare($number);
+}
+?>
+
+
+
+
+2) quadratic coef. 
+
+<?ph
+function findRoots($a, $b, $c)
+{
+if ($a == 0)
+{
+echo "Invalid";
+return;
+}
+$d = $b * $b - 4 * $a * $c;
+$sqrt_val = sqrt(abs($d));
+if ($d > 0)
+{
+echo "Roots are real and different,and the roots are: <br>";
+echo "Roots are: "(-$b + $sqrt_val) / (2 * $a) , "\n", 
+(-$b - $sqrt_val) / (2 * $a);
+}
+else if ($d == 0)
+{
+echo "Roots are real and same, and the roots are: <br>";
+echo -$b / (2 * $a);
+}
+// d < 0
+else
+{
+echo "Roots are complex and the roots are: <br>";
+echo -$b / (2 * $a) , " + i" , 
+$sqrt_val / (2 * $a) , "<br>" , -$b / (2 * $a), 
+" - i", $sqrt_val / (2 * $a) ;
+}
+}
+$a = 1; $b = 3 ;$c = 12;
+findRoots($a, $b, $c);
+?>
+
+
+
+quad coef(html) . 
+
+html. 
+
+<html> 
+<body> 
+<form action="Exp3_2_forms.php" method = "post"> 
+ENTER THE COEFFICIENTS
+<br><br> 
+Coefficient A: <input type="text" name="a"> 
+<br><br> 
+Coefficient B: <input type="text" name="b"> 
+<br><br>
+Coefficient C: <input type="text" name="c"> 
+<br><br>
+<input type = "submit" name = "submit" value="Calculate Roots">
+<br><br>
+ 
+</form> 
+</body> 
+</html>
+
+
+php. 
+
+<?php 
+if(isset($_POST['submit'])) 
+ { 
+$a = $_POST["a"];
+$b = $_POST["b"];
+$c = $_POST["c"];
+function findRoots($a, $b, $c)
+{
+if ($a == 0)
+{
+echo "Invalid";
+return;
+}
+$d = $b * $b - 4 * $a * $c;
+$sqrt_val = sqrt(abs($d));
+if ($d > 0)
+{
+echo "Roots are real and different,and the roots are: <br>";
+echo "Roots are: "(-$b + $sqrt_val) / (2 * $a) , "\n", 
+(-$b - $sqrt_val) / (2 * $a);
+}
+else if ($d == 0)
+{
+echo "Roots are real and same, and the root is: <br>";
+echo -$b / (2 * $a);
+}
+else
+{
+echo "Roots are complex and the roots are: <br>";
+echo -$b / (2 * $a) , " + i" , 
+$sqrt_val / (2 * $a) , "<br>" , -$b / (2 * $a), 
+" - i", $sqrt_val / (2 * $a) ;
+}
+}
+findRoots($a, $b, $c);
+}
+?>
+
