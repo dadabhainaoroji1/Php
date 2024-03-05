@@ -1,17 +1,61 @@
 <?php
-//Program for Area of Triangle and Rectangle
-#Parameters of Triangle
 $base = 10; 
 $height = 15;
-#Parameters of Rectangle 
+
 $length = 8;
 $breadth = 5;
-#Area of Triangle
+
 $Trarea = ($base * $height) / 2; 
 echo "The area of a Triangle with Base = $base and Height = $height is $Trarea 
 <br> <br>";
-#Area of Rectangle
+
 $Rectarea = $length * $breadth; 
 echo "The area of a Rectangle with Length = $length and Width = $breadth is 
 $Rectarea";
+?>
+
+
+
+<html> 
+<body> 
+<form form action="Exp1a_Forms.php" method = "post"> 
+Area of Rectangle <br><br> 
+Width: <input type="number" name="width"> <br><br> 
+Length: <input type="number" name="length"> <br><br> 
+Area of Triangle <br><br> 
+Base: <input type="number" name="Base"> <br><br> 
+Height: <input type="number" name="Height"> <br><br> 
+<input type = "submit" name = "submit" value="Calculate"> <br><br>
+</form> 
+</body> 
+</html>
+
+
+<?php 
+if(isset($_POST['submit'])) 
+ { 
+$width = $_POST['width']; 
+$length = $_POST['length']; 
+$area1 = $width*$length; 
+$Base = $_POST['Base']; 
+$Height = $_POST['Height']; 
+$area2 = ($Base * $Height) / 2; 
+echo "The area of a rectangle with width = $width and length = $length is $area1 
+<br><br>"; 
+echo "The area of a Triangle with Base = $Base and Height = $Height is $area2"; 
+} 
+?>
+
+
+
+b.  comp int
+
+<?php
+$p = 5000;
+$R = 8;
+$t = 4;
+$n = 1;
+$r = $R/100;
+$ci = $p * pow ((1 + ($r / $n)), $n * $t);
+echo "Compound Interest = $ci";
 ?>
