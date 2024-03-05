@@ -1,0 +1,75 @@
+mean std.  
+
+<?php 
+function Mean_Stand_Deviation($arr) 
+
+{ 
+
+$num_of_elements = count($arr); 
+
+$variance = 0.0;
+$mean = array_sum($arr)/$num_of_elements;
+echo "Mean of given array is: ".$mean;
+foreach($arr as $i) 
+{  
+$variance += pow(($i - $mean), 2); 
+} 
+$std_dev = sqrt($variance/$num_of_elements); 
+echo "<br> Standard Deviation of given array is: ".$std_dev;
+}  
+$arr = array(1, 6, 8, 10, 12); 
+Mean_Stand_Deviation($arr); 
+?>
+
+
+
+b) histo
+
+html. 
+
+<html> 
+<body> 
+<form action="Exp5_b_forms.php" method = "post"> 
+ENTER THE SCORES
+<br><br> 
+<label for="scores">Enter scores separated by commas:</label><br>
+ <textarea id="scores" name="scores" rows="5" cols="30"></textarea><br>
+<button type="submit">Generate Histogram</button>
+<br><br>
+ </form> 
+</body> 
+</html>
+
+
+php.  
+
+<?php
+function create_histogram($scores) {
+ $histogram = array_fill(0, 11, 0); 
+ foreach ($scores as $score) {
+ if ($score >= 0 && $score <= 100) {
+ $index = floor($score / 10); 
+ $histogram[$index]++;
+ } else {
+ echo "Invalid score: $score<br>"; 
+ }
+ }
+ return $histogra
+}
+if (isset($_POST['scores'])) {
+ $scores_string = $_POST['scores'];
+ $scores_array = explode(",", $scores_string);
+ $scores = array_map('intval', $scores_array); 
+ $histogram = create_histogram($scores);
+ if (is_array($histogram)) {
+ echo "<h2>Histogram</h2>";
+ foreach ($histogram as $index => $count) {
+ $range_start = $index * 10; 
+ $range_end = min($range_start + 9, 100); 
+ echo "Scores $range_start - $range_end: $count<br>";
+ }
+ } else {
+ echo "Error generating histogram.";
+ }
+}
+?>
