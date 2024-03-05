@@ -1,0 +1,10 @@
+Develop a PHP program to filter the elements of an array with key names.
+
+<?php
+$colour = array('c1' => 'Red', 'c2' => 'Green', 'c3' => 'White', 'c4' => 
+'Black');
+$keysToFilter = array('c2', 'c4');
+$filteredArray = array_diff_key($colour, array_flip($keysToFilter));
+print_r($filteredArray);
+echo "<br>"."My house have the $colour[c1] carpet and the $colour[c2] lawn";
+?>
