@@ -1,0 +1,64 @@
+1. Print the first N lines of a file
+2. Update/Add the content of a file. 
+
+html. 
+
+<html>
+ <h2>File Operations</h2>
+ <form action="Exp7.php" method="post">
+ <label for="lineNumber"><h4>Select Line Number to Print:</h4></label>
+ <select name="lineNumber" required>
+ <option value="1">Line 1</option>
+ <option value="2">Line 2</option>
+ <option value="3">Line 3</option>
+ <option value="4">Line 4</option>
+ <option value="5">Line 5</option>
+ <option value="6">Line 6</option>
+ </select>
+<br><br>
+ <input type="submit" name="printLine" value="Print Line">
+ <br>
+ <label for="newContent"><h4>Enter Content to Append:</h4></label> 
+ <textarea name="newContent" rows="4" cols="50" required></textarea>
+ <br> <br>
+ <input type="submit" name="appendContent" value="Append Content">
+ </form>
+</html>
+
+
+php. 
+
+<?php
+$filename = "MyFile.txt";
+echo readfile("MyFile.txt");
+if ($_SERVER["REQUEST_METHOD"] == "POST") 
+{
+ if (isset($_POST["printLine"])) 
+{
+ $lineNumber = $_POST["lineNumber"];
+ printSelectedLine($filename, $lineNumber);
+ }
+ if (isset($_POST["appendContent"])) 
+{
+ $newContent = $_POST["newContent"];
+ appendToFile($filename, $newContent);
+ }
+}
+function printSelectedLine($filename, $lineNumber) 
+{
+ $lines = file($filename);
+ if (isset($lines[$lineNumber - 1])) 
+{
+echo "<h3>Selected Line:</h3>";
+ echo $lines[$lineNumber - 1];
+ } else 
+{
+ echo "<h3>Invalid Line Number</h3>";
+ }
+}
+function appendToFile($filename, $newContent) 
+{
+ file_put_contents($filename, $newContent, FILE_APPEND);
+ echo "<h3>Content Appended Successfully</h3>";
+}
+?>
