@@ -1,0 +1,59 @@
+a.  string rep with literal(sing doub quote) 
+<?php 
+$string1 = 'Canara’;
+$string2 = ' Engineering College'; 
+$result1 = $string1.$string2; 
+$string3 = "Artificial Intelligence";
+$string4 = " and Machine Learning";
+$result2 = $string3.$string4;
+echo 'Concatenation of strings using single quotes:'. $result1. '<br>'; 
+echo "Concatenation of strings using double quotes: $result2 "; 
+?>
+
+
+b. stri as variable
+
+<?php
+$firstname="Stephen";
+$lastName=" Hawking";
+$name = $firstname.$lastName;
+echo "My name is $name <br> <br> "; 
+$greeting = "Hello!,";
+$greeting .= " $name";
+echo "Me: $greeting" 
+?>
+
+
+c.  multi stri
+
+<?php
+$name = "Wonder Kid";
+$age = 10;
+$message1 = "Hello $name, you are how many years old?";
+$message2 = 'Hey,'. 'I am ' . $age . ' years old.';
+echo $message1 . "<br>" . $message2;
+?>
+
+
+
+d.  sing quote as part
+
+Source Code:
+<?php
+$quoteInsideString = "He said, 'This is a PHP tutorial.'";
+$quoteOutsideString = 'She exclaimed, "PHP is amazing!"';
+echo $quoteInsideString . "<br>" . $quoteOutsideString;
+?>
+
+
+
+
+e.  html seg
+
+<?php
+$segment1 = '<p id="paragraph1">This is the first paragraph.</p>';
+$segment2 = '<div class="container">';
+$segment3 = '<p id="paragraph2">This is the second paragraph.</p>';
+$segment4 = '</div>';
+$combinedHTML = $segment1 . $segment2 . $segment3 . $segment4;
+echo $combinedHTML;
