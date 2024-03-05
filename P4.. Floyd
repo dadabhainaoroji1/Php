@@ -1,0 +1,77 @@
+newton’s algorithm.
+
+html. 
+
+<html> 
+<body> 
+<form action="Exp4_a.php" method = "post"> 
+ENTER THE NUMBER 
+<br><br> 
+NUMBER: <input type="number" name="number"> 
+<br><br> 
+<input type = "submit" name = "submit" value="Check">
+<br><br>
+ 
+</form> 
+</body> 
+</html>
+
+
+php. 
+
+<?php 
+<?php 
+if(isset($_POST['submit'])) 
+ { 
+$number = $_POST['number'];
+function squareRoot($number, $epsilon = 1e-10) 
+{
+ $guess = $number / 2;
+ while (abs($guess * $guess - $number) > $epsilon) 
+{
+ $guess = 0.5 * ($guess + $number / $guess);
+ }
+ echo "The square root of $number is approximately: $guess";
+}
+squareRoot($number);
+}
+?>
+
+
+b) floyd tri. 
+
+<html> 
+<body> 
+<form action="Exp4_b.php" method = "post"> 
+ENTER NUMBER OF ROWS IN FLOYD'S TRIANGLE 
+<br><br> 
+ROWS: <input type="number" name="rows"> 
+<br><br> 
+<input type = "submit" name = "submit" value="Generate">
+<br><br>
+</form> 
+</body> 
+</html>
+
+
+
+<?php
+if(isset($_POST['submit'])) 
+ { 
+$rows= $_POST['rows'];
+ function generateFloydsTriangle($rows)
+ {
+ $number = 1;
+ for ($i = 1; $i <= $rows; $i++) 
+{
+ for ($j = 1; $j <= $i; $j++) 
+{
+ echo $number . " ";
+ $number++;
+ }
+ echo "<br>";
+ }
+ }
+}
+ generateFloydsTriangle($rows);
+?>
