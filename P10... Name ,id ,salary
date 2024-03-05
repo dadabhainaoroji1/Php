@@ -1,0 +1,26 @@
+<?php
+class Employee {
+ public $Emp_Name;
+ public $Emp_ID;
+ public $Emp_Dept;
+ public $Emp_Salary;
+ public $Emp_DOJ;
+ public function readEmployeeData() {
+ $this->Emp_Name = "Arjun";
+$this->Emp_ID = 201201;
+ $this->Emp_Dept = "IT";
+ $this->Emp_Salary = 71486;
+ $this->Emp_DOJ = "2012-11-10";
+ }
+ public function printEmployeeData() {
+ echo "Employee Name: " . $this->Emp_Name . "<br>";
+ echo "Employee ID: " . $this->Emp_ID . "<br>";
+ echo "Employee Department: " . $this->Emp_Dept . "<br>";
+ echo "Employee Salary: " . $this->Emp_Salary . "<br>";
+ echo "Employee Date of Joining: " . $this->Emp_DOJ . "<br>";
+ }
+}
+$employee1 = new Employee();
+$employee1->readEmployeeData();
+$employee1->printEmployeeData();
+?>
