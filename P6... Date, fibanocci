@@ -1,0 +1,28 @@
+date. 
+
+<?php
+echo "Format 1: ".date("l")."<br>";
+echo "Format 2: ".date("l jS \of F Y h:i:s A")."<br>";
+echo "Format 3: ".date(DATE_RFC822)."<br>";
+echo "Format 4: "."Oct 3,2023 was on a ".date("l", mktime(0,0,0,10,3,2023)). 
+"<br>";
+?>
+
+
+fib. 
+
+<?php
+function fibonacci($n, $first_num = 0, $second_num = 1) 
+{
+ if($n == 0) 
+{
+ return;
+}
+ echo $first_num . "| ";
+ $next_num = $first_num + $second_num;
+ fibonacci($n - 1, $second_num, $next_num);
+}
+$n = 10;
+echo "Fibonacci Series: ";
+fibonacci($n);
+?>
