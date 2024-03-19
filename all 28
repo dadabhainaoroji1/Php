@@ -1,0 +1,627 @@
+1.Develop a PHP program to calculate areas of Square and Rectangle. The parameters of rectangle should be taken from a HTML form while the parameters of square are constants and to be defined within the PHP script.
+HTML Code:
+<html>
+<body>
+<form form action="QB1.php" method="post">
+Area of rectangle<br><br>
+Width:<input type="number" name="width"><br><br>
+Length:<input type="number" name="length"><br><br>
+<input type="submit" name="submit" value="Calculate"><br<br>
+</form>
+</body>
+</html>
+PHP Code:
+<?php
+if (isset($_POST['submit']))
+{
+$side=5;
+$area1=$side*$side;
+$width=$_POST['width'];
+$length=$_POST['length'];
+$area2=$width*$length;
+echo"The area of a square with Side=$side is $area1<br><br>";
+echo"The area of a rectangle with width=$width and length=$length is $area2<br><br>";
+}
+?>
+
+
+
+2.Develop a PHP program to calculate and display the areas of a circle and a square. Use predefined values for the radius of the circle and the side length of the square.
+PHP Code:
+<?php
+if (isset($_POST['submit']))
+{
+$radius=10;
+$area1=3.14*$r*$r;
+$side=5;
+$area2=$width*$length;
+echo"The area of a circle with radius=$radius is $area1<br><br>";
+echo"The area of a square with Side=$side is $area2<br><br>";
+}
+?>
+
+
+
+3.Develop a PHP program to calculate Compound Interest. The principal amount should be read from a suitable HTML form.
+HTML Code
+<html>
+<body>
+<form form action="QB3.php" method="POST">
+Enter the Values to calculate Compound Interest<br><br>
+Principle Amount: <input type="number" name="p"><br><br>
+<input type="submit" name="submit" value="Calculate"><br><br>
+</form>
+</body>
+</html>
+PHP Code
+<?php
+if(isset($_POST['submit']))
+{
+$p=$_POST['p'];
+$R=8;
+$t=4;
+$n=1;
+$r=$R/100;
+$ci=$p*pow((1+($r/$n)),$n*$t);
+echo"Compund Interest is: $ci";
+}
+?>
+
+
+
+4.Develop a PHP program to calculate Compound Interest for different rates of interest. The rate of interests to be read from a suitable HTML form.
+HTML Code
+<html>
+<body>
+<form form action="QB3.php" method="POST">
+Enter the Values to calculate Compound Interest<br><br>
+Rate of Interest: <input type="number" name="r"><br><br>
+<input type="submit" name="submit" value="Calculate"><br><br>
+</form>
+</body>
+</html>
+PHP Code
+<?php
+if(isset($_POST['submit']))
+{
+$p=5000
+$R=$_POST['r'];
+$t=4;
+$n=1;
+$r=$R/100;
+$ci=$p*pow((1+($r/$n)),$n*$t);
+echo"Compund Interest is: $ci";
+}
+?>
+
+
+
+5.You have following strings:
+" In the end”
+“We will remember not the words of our enemies”.
+“but”
+“The silence of our friends."
+“- Martin Luther King Jr.”
+Concatenate these strings to get the famous quote: " In the end, we will remember not the words of our enemies, but the silence of our friends." - Martin Luther King Jr.
+<?php
+$string1=" In the end ";
+$string2=" We will remember not the words of our enemies'";
+$string3=" but ";
+$string4=" the silence of our friends.";
+$string5="- Martin Luther King Jr.";
+echo ' ” '.$string1.",".$string2.",".$string3.$string4.' ” '.$string5;
+?>
+
+
+
+6.Develop a PHP program that takes two strings as input and concatenates them. Additionally, check and display the length of the concatenated string.
+<?php
+$string1='Canara';
+$string2=' Engineering college';
+$result=$string1.$string2;
+$len=strlen($result);
+echo 'Concatenation of strings:' . $result. '<br>'.'And length of the string is '.$len;
+?>
+
+
+
+7.Develop a PHP Program to check whether given numbers 10, 13, 15, 50 are Odd or even. The numbers should be given to the program with the help of HTML form.
+HTML Code
+<html>
+<body>
+<form form action="program3.php" method="POST">
+Enter your Numbers<br><br>
+Number1: <input type="number" name="number1"><br><br>
+Number2: <input type="number" name="number2"><br><br>
+Number3: <input type="number" name="number3"><br><br>
+Number4: <input type="number" name="number4"><br><br>
+<input type="submit" name="submit" value="Check"><br><br>
+</form>
+</body>
+</html>
+PHP Code
+<?php
+if(isset($_POST['submit']))
+{
+$number1=$_POST['number1'];
+$number2=$_POST['number2'];
+$number3=$_POST['number3'];
+$number4=$_POST['number4'];
+function check($number)
+{
+if($number%2==0)
+{
+echo"The Number $number is Even<br>";
+}
+else
+{
+echo"The Number $number is Odd<br>";
+}
+}
+check($number1);
+check($number2);
+check($number3);
+check($number4);
+}
+?>
+
+
+
+8.Define a PHP function to check whether 12278 is divisible by 32. The divisor should be passed to script using POST method.
+HTML Code
+<html>
+<body>
+<form form action="QB8.php" method="POST">
+Enter the Divisor<br><br>
+Divisor: <input type="number" name="div"><br><br>
+<input type="submit" name="submit" value="Check"><br><br>
+</form>
+</body>
+</html>
+PHP Code
+<?php
+if(isset($_POST['submit']))
+{
+$divisor=$_POST['div'];
+function Divisibility($divisor)
+{
+$num=12278;
+$div=$num/$divisor;
+$mod=$num%$divisor;
+if($mod==0){
+echo $num.' is exactly divisible by '. $divisor.'-'.$div.' times<br/>';
+}
+else{
+echo $num.' is not exactly divisible by '. $divisor.'<br/>';
+}
+}
+Divisibility($divisor);
+}
+?>
+
+
+
+9.Define a PHP function to check whether 579 is a perfect square. 579 should be passed to script using POST method.
+HTML Code
+<html>
+<body>
+<form form action="QB8.php" method="POST">
+Enter a Number<br><br>
+Number: <input type="number" name="num"><br><br>
+<input type="submit" name="submit" value="Check"><br><br>
+</form>
+</body>
+</html>
+PHP Code
+<?php
+if(isset($_POST['submit']))
+{
+$number=$_POST['num'];
+function checkSquare($number)
+{
+$sqrt=sqrt($number);
+if(floor($sqrt)==$sqrt){
+echo"$number is a Perfect Square.\n";
+echo"Square root:$sqrt.\n";
+}
+else{
+echo"$number is not a Perfect Square.\n";
+}
+}
+checkSquare($number);
+}
+?>
+
+
+
+10.Create a PHP program that takes user input for coefficients (a, b) from HTML form of a linear equation (ax + b = 0) and solves for the unknown variable x. Print the solution or a suitable message if there is no solution.
+HTML Code
+<html>
+<body>
+<form form action="QB10.php" method="POST">
+Enter Two Numbers<br><br>
+A: <input type="number" name="A"><br><br>
+B: <input type="number" name="B"><br><br>
+<input type="submit" name="submit" value="Check"><br><br>
+</form>
+</body>
+</html>
+PHP Code
+<?php
+if(isset($_POST['submit']))
+{
+$a=$_POST['A'];
+$b=$_POST['B'];
+$root = -$b/$a;
+if($a>0){
+echo "Roots are real and the root is: $root <br>";
+}
+else{
+echo "NO solution <br>";
+}
+}
+?>
+
+
+
+11.Create a PHP program that takes user input for coefficients (a, b, c) from HTML form of a quadratic equation and check whether the roots are real and different. Print YES or NO.
+HTML Code
+<html>
+<body>
+<form form action="QB10.php" method="POST">
+Enter Three Numbers<br><br>
+A: <input type="number" name="A"><br><br>
+B: <input type="number" name="B"><br><br>
+C: <input type="number" name="C"><br><br>
+<input type="submit" name="submit" value="Check"><br><br>
+</form>
+</body>
+</html>
+PHP Code
+<?php
+if(isset($_POST['submit']))
+{
+$a=$_POST['A'];
+$b=$_POST['B'];
+$c=$_POST['C'];
+// If a is 0, then equation is not quadratic, but linear
+if($a == 0)
+{
+echo "Invalid";
+return;
+}
+$d = $b * $b -( 4 * $a * $c);
+if($d > 0)
+{
+echo "YES, Roots are real and different<br>";
+}
+else
+{
+echo "NO, Roots are not real<br>";
+}
+}
+?>
+
+
+
+12.Create a PHP program that takes user input for coefficients (a, b, c) from HTML form of a quadratic equation and check whether the roots are real and same. Print YES or NO.
+HTML Code
+<html>
+<body>
+<form form action="QB10.php" method="POST">
+Enter Three Numbers<br><br>
+A: <input type="number" name="A"><br><br>
+B: <input type="number" name="B"><br><br>
+C: <input type="number" name="C"><br><br>
+<input type="submit" name="submit" value="Check"><br><br>
+</form>
+</body>
+</html>
+PHP Code
+<?php
+if(isset($_POST['submit']))
+{
+$a=$_POST['A'];
+$b=$_POST['B'];
+$c=$_POST['C'];
+// If a is 0, then equation is not quadratic, but linear
+if($a == 0)
+{
+echo "Invalid";
+return;
+}
+$d = $b * $b -( 4 * $a * $c);
+if($d == 0)
+{
+echo "YES,Roots are real and same<br>";
+}
+else
+{
+echo "NO,Roots are not real and same<br>";
+}
+}
+?>
+
+
+
+13.Create a PHP program that takes user input for coefficients (a, b, c) from HTML form of a quadratic equation and check whether the roots are complex. Print YES or NO.
+HTML Code
+<html>
+<body>
+<form form action="QB10.php" method="POST">
+Enter Three Numbers<br><br>
+A: <input type="number" name="A"><br><br>
+B: <input type="number" name="B"><br><br>
+C: <input type="number" name="C"><br><br>
+<input type="submit" name="submit" value="Check"><br><br>
+</form>
+</body>
+</html>
+PHP Code
+<?php
+if(isset($_POST['submit']))
+{
+$a=$_POST['A'];
+$b=$_POST['B'];
+$c=$_POST['C'];
+// If a is 0, then equation is not quadratic, but linear
+if($a == 0)
+{
+echo "Invalid";
+return;
+}
+$d = $b * $b -( 4 * $a * $c);
+if($d < 0)
+{
+echo "YES,Roots are complex<br>";
+}
+else
+{
+echo "NO,Roots are not complex<br>";
+}
+}
+?>
+
+
+
+14.Develop a PHP program to find the square root of 35 by setting the initial guess for the square root to half of the number.
+<?php
+$number=35;
+$epsilon=1e-10;
+$guess=$number/2;
+while(abs($guess*$guess-$number)>$epsilon)
+{
+$guess=0.5*($guess+$number/$guess);
+}
+echo"The Square Root of $number is Approximately: $guess";
+?>
+
+
+
+15. Develop a PHP program to generate a right-angled triangular array of natural numbers. The array should have 7 rows.
+<?php
+$rows=7;
+$number=1;
+for($i=1;$i<=$rows;$i++)
+{
+for($j=1;$j<=$i;$j++)
+{
+echo $number," ";
+$number++;
+}
+echo"<br>";
+}
+?>
+
+
+
+16.Develop a PHP application that reads these numbers 3, 7, 9, 10, 12 and calculates the mean and standard deviation.
+<?php
+$arr=array(3,7,9,10,12);
+$num_of_elements=count($arr);
+$variance=0.0;
+$mean=array_sum($arr)/$num_of_elements;
+echo "Mean of the given array is: ".$mean."<br>";
+foreach($arr as $i)
+{
+$variance+=pow(($i-$mean),2);
+}
+$std_dev=sqrt($variance/$num_of_elements);
+echo"Standard Deviation of the given array is: ".$std_dev;
+?>
+
+
+
+17. Develop a PHP application that reads following scores and creates a histogram array whose elements contain the number of scores between 0 and 9, 10 and 19, etc. The last “box” in the histogram should include scores between 90 and 100. Use a function to generate the histogram. The scores are: 99,90,89,82,76,74,66,58,45,35,35,28,10,5.
+<?php
+function create_historgram($scores){
+$histogram=array_fill(0,11,0);
+foreach($scores as $score){
+if($score>=0 && $score<=100){
+$index=floor($score/10);
+$histogram[$index]++;
+}else{
+echo"Invalid Score: $score<br>";
+}
+}
+return $histogram;
+}
+$scores=array(99,90,89,82,76,74,66,58,45,35,35,28,10,5);
+$histogram=create_historgram($scores);
+if(is_array($histogram)){
+echo"<h2>Histogram</h2>";
+foreach($histogram as $index=>$count){
+$range_start=$index*10;
+$range_end=min($range_start+9,100);
+echo"Scores $range_start-$range_end: $count<br>";
+}
+}else{
+echo"Error Generating Histogram";
+}
+?>
+
+
+
+18.Develop a PHP program that displays the current date in the following formats, using predefined functions:
+a) Month name, two-digit year (e.g., February 24)
+b) Day of the week, full month name, year (e.g., Saturday, February 24, 2024)
+c) Day of the year, Day of the Month, and full year (e.g., 56, 24, 2024)
+<?php
+echo "Format 1: ".date("F y")."<br>";
+echo "Format 2: ".date("l, F j,Y")."<br>";
+echo "Format 3: ".date("z ,j, Y")."<br>";
+?>
+
+
+
+19.Develop a PHP program to generate the Fibonacci series and print the series starting from 3. Use recursive function.
+<?php
+function fibonacci($n,$first_num=3,$second_num=4)
+{
+if($n==0)
+{
+return;
+}
+echo $first_num." |";
+$next_num=$first_num+$second_num;
+fibonacci($n-1,$second_num,$next_num);
+}
+$n=10;
+echo "Fibonacci Series is: ";
+fibonacci($n);
+?>
+
+
+
+20.Create a text file of 5 lines and write a PHP program to print first 2 lines of this file.
+Create a text File with 5 lines of text (MyFile.txt)
+PHP Code
+<?php
+$filename="MyFile.txt";
+echo readfile("MyFile.txt"); //optional code (prints the whole file text)
+$lines=file($filename);
+echo "<br>$lines[0]";
+echo "<br>$lines[1]";
+?>
+
+
+
+21. Develop a PHP program to read the following content from a file and print the frequency of occurrence of the word “PHP”.
+PHP allows developers to create dynamic and interactive websites.
+Learning PHP is essential for web development.
+PHP code can be embedded directly into HTML.
+The PHP community is active and supportive.
+Many open-source projects use PHP.
+PHP frameworks like Laravel and Symphony simplify web development.
+Create a text file with the above text in it(MyFile.txt)
+PHP Code
+<?php
+$filename="MyFile.txt";
+$searchWord=PHP;
+$content=file_get_contents($filename);
+$wordCount=substr_count($content,$searchWord);
+echo "<h3>Frequency of '$searchWord' in the file:</h3>";
+echo "<p>$wordCount occurences </p>";
+}
+?>
+
+
+
+22.Develop a PHP program to filter wild animals from following array:
+$animals = ('a1' => 'Lion', 'a2' => 'Cat', 'a3' => 'Dog', a4 => 'Tiger', a5 => ‘Zebra’)
+<?php
+$animals = array('a1'=>'Lion','a2' => 'Cat', 'a3' => 'Dog', a4 => 'Tiger', a5 => ‘Zebra’)
+$keysToFilter=array('a1','a4','a5');
+$filteredArray=array_diff_key($animals,array_flip($keysToFilter));
+print_r($filteredArray);
+?>
+
+
+
+23.Develop a PHP program to filter non-traffic signal lights from following array:
+$colours = ('c1' => 'Green', 'c2' => 'White', 'c3' => 'Red', c4 => 'Black', a5 => ‘Yellow’)
+<?php
+$color = array('c1'=>'Green','c2'=>'White','c3'=>'Red','c4'=>'Black','a5' =>'Yellow');
+$keysToFilter=array('c2','c4');
+$filteredArray=array_diff_key($color,array_flip($keysToFilter));
+print_r($filteredArray);
+?>
+
+
+
+24.Develop a PHP program to count the occurrences of Aadhaar numbers present in a text.
+Example for Aadhar number: 1101 2102 3203 (Space after every 4 digits as indicated on Aadhar card).
+<?php
+$text="Aadhaar number of Resident 1 with house no. 436 is 2653 8564 4663. Resident 2 with house no.
+1023 is 9960 4856 2334. Resident 3 with house no. 23 is 1001 2002 345";
+$aadhaar="/\d{4} \d{4} \d{4}/";
+$aadhaarCount=preg_match_all($aadhaar,$text);
+echo"Occurences of Aadhaar numbers is: $aadhaarCount";
+?>
+
+
+
+25.Develop a PHP program to count the occurrences of house numbers present in a text.
+Example for house number is 6-76/8.
+<?php
+$text="House number of Resident 1 is . 6-76/8. Resident 2 with house no.
+1023. Resident 3 with house no. 8-23/2";
+$house_no="#\d{1}-\d{2}/\d{1}#";
+$Count=preg_match_all($house_no,$text);
+echo"Occurences of Aadhaar numbers is: $Count ";
+?>
+
+
+
+26.Develop a PHP program to count the occurrences of PAN present in a text.
+Example for PAN is AYGPB3789X.
+<?php
+$text="PAN number of Resident 1 with house no. 26 is AYGPB3789X. Resident 2 with house no.
+1023 is FJSLF3789X. Resident 3 with house no. 345 is 1001 2002 345";
+$PAN="/[A-Z]{5}\d{4}[A-Z]{1}/";
+$Count=preg_match_all($PAN,$text);
+echo"Occurences of Aadhaar numbers is: $Count ";
+?>
+
+
+
+27.Develop a PHP program to find the occurrences of “popular” in the following text and replace them with “very popular”
+Python is a popular scripting language. It is popular that learning Python is essential for Placements.
+<?php
+$str="Python is a popular scripting language. It is popular that learning Python is essential for Placements.";
+$pattern="/popular/i";
+echo preg_replace($pattern,"very popular",$str);
+?>
+
+
+
+28.Create a PHP program to perform following operations by getting numbers from HTML form: X = a - b + c
+Y = a * b
+Z = a / b * c
+P = X + Y + Z
+HTML Code
+<html>
+<body>
+<form form action="QB28.php" method="POST">
+Enter Three Numbers<br><br>
+A: <input type="number" name="A"><br><br>
+B: <input type="number" name="B"><br><br>
+C: <input type="number" name="C"><br><br>
+<input type="submit" name="submit" value="Check"><br><br>
+</form>
+</body>
+</html>
+PHP Code
+<?php
+if(isset($_POST['submit']))
+{
+$a=$_POST['A'];
+$b=$_POST['B'];
+$c=$_POST['C'];
+$X = $a - $b + $c;
+$Y = $a * $b;
+$Z = $a / $b * $c;
+$P = $X + $Y + $Z;
+echo"The three numbers are $a $b $c<br>X= $X Y= $Y Z= $Z P= $P";
+}
+?>
